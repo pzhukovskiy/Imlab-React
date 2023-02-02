@@ -1,0 +1,8 @@
+.App > button {
+    border-radius: 100%;
+    border: none;
+}
+
+.App > button:hover {
+    background-color: gainsboro;
+}
