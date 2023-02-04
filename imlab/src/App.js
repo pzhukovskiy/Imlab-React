@@ -8,7 +8,7 @@ function App() {
   const [num2, setNum2] = useState('');
   const [action, setAction] = useState(null);
   const [id, setId] = useState('');
-  let [result, setResult] = useState(0);
+  const [result, setResult] = useState('');
   
   return (
     <div className="App">

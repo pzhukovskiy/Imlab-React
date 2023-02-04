@@ -8,9 +8,6 @@ function ShowHistory() {
         num1,
         num2,
         id,
-    } = useContext(Context);
-
-    let {
         result,
     } = useContext(Context);
 

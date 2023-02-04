@@ -17,12 +17,10 @@ function Calculator() {
         setAction,
         id,
         setId,
-    } = useContext(Context);
-
-    let {
         result,
         setResult,
     } = useContext(Context);
+
 
     const addCalculate = (e) => {
         // console.log(action);
@@ -98,7 +96,6 @@ function Calculator() {
                 else {
                     setId('/');
                     setResult(+num1 / +num2);
-                    result.toFixed(2);
                     break;
                 }
             }
@@ -137,7 +134,7 @@ function Calculator() {
                     <p>Первое число - {num1}</p>
                     <p>Второе число - {num2}</p>
                     <p>Выбрано действие - {id}</p>
-                    <p>Результат - {result.toFixed(2)}</p>
+                    <p>Результат - {result}</p>
                     <div>
                     <button onClick={() => CalculateNumbers(num1, num2, '+')}>Сложение</button>
                     <button onClick={() => CalculateNumbers(num1, num2, '-')}>Вычитание</button>
