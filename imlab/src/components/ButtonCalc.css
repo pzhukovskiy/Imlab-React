@@ -1,8 +1,13 @@
-.App > button {
+.CalculatorButtonWrapper {
     border-radius: 100%;
     border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 4px;
 }
 
-.App > button:hover {
-    background-color: gainsboro;
+
+button {
+    padding: 12px 24px;
 }

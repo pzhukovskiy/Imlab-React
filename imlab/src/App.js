@@ -1,7 +1,11 @@
 import React, { createContext, useState } from "react";
-import Calculator from "./components/MyCalculator";
 
-export let Context = createContext(null);
+import Calculator from "./components/MyCalculator";
+import MainPage from "./tovars/MainPage";
+
+// import { applyMiddleware, createStore } from "redux";
+
+export const Context = createContext(null);
 
 function App() {
   const [num1, setNum1] = useState('');
@@ -12,8 +16,10 @@ function App() {
   
   return (
     <div className="App">
-      <Context.Provider value={{num1, setNum1, num2, setNum2, action, setAction, id, setId, result, setResult}}>
-        <Calculator/>
+      <Context.Provider value={{
+        num1, setNum1, num2, setNum2, action, setAction, id, setId, result, setResult}}>
+        {/* <Calculator/> */}
+        <MainPage/>
       </Context.Provider>
     </div>
   )
@@ -21,8 +27,16 @@ function App() {
 
 export default App;
 
-//Воссоздать мой калькулятор на React, для хранения данных использовать useContext();
+/* 
 
+Товар 
+хранить в локальном хранилище
+создание товара путем введнеия его наименования и стоимости
+количество
+возможность выбрать товар
+калькулятором задать сколько товара можно продать
+выбрать через калькулятор наличные или нет
+если меньше 0 то удалять из локального
+и спользованием редакс
 
-//import {MyButton} from "./components/MyButton"; - export - именованный экспорт
-//import MyButton from "./components/MyButton"; - export default - экспорт компонента как одного целого
+*/

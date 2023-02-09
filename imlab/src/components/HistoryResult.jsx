@@ -4,12 +4,7 @@ import './HistoryResult.css';
 
 function ShowHistory() {
 
-    const {
-        num1,
-        num2,
-        id,
-        result,
-    } = useContext(Context);
+    const { num1, num2, id, result, } = useContext(Context);
 
     return (
         <div className="App">

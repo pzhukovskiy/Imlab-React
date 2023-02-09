@@ -13,7 +13,7 @@ function ButtonCalc() {
     } = useContext(Context);
 
     return (
-        <div className="App">
+        <div className="CalculatorButtonWrapper">
             <button onClick={() => action === null ? null : action ? setNum1(num1 + 1) : setNum2(num2 + 1)}>1</button>
             <button onClick={() => action === null ? null : action ? setNum1(num1 + 2) : setNum2(num2 + 2)}>2</button>
             <button onClick={() => action === null ? null : action ? setNum1(num1 + 3) : setNum2(num2 + 3)}>3</button>
