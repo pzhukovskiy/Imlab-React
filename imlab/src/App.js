@@ -1,9 +1,5 @@
 import React, { createContext, useState } from "react";
-
-import Calculator from "./components/MyCalculator";
 import MainPage from "./tovars/MainPage";
-
-// import { applyMiddleware, createStore } from "redux";
 
 export const Context = createContext(null);
 
@@ -16,9 +12,7 @@ function App() {
   
   return (
     <div className="App">
-      <Context.Provider value={{
-        num1, setNum1, num2, setNum2, action, setAction, id, setId, result, setResult}}>
-        {/* <Calculator/> */}
+      <Context.Provider value={{num1, setNum1, num2, setNum2, action, setAction, id, setId, result, setResult}}>
         <MainPage/>
       </Context.Provider>
     </div>
