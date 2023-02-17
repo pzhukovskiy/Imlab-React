@@ -113,17 +113,6 @@ function Calculator() {
     return () => window.removeEventListener("keypress", addCalculate);
   });
 
-  //  =================================================================================
-  function NumberList(props) {
-    const numbers = props.numbers;
-    const listItems = numbers.map((number) => (
-      <p key={number.toString()}>{number}</p>
-    ));
-    return <ul>{listItems}</ul>;
-  }
-
-  const numbers = [1, 2, 3, 4, 5];
-  //  =================================================================================
   return (
     <div className="Calculator">
       <div className="container">
@@ -141,7 +130,6 @@ function Calculator() {
         </div>
         <div className="box child_3">
           <p id="name">История:</p>
-          {/* <NumberList numbers={numbers}/>НОВАЯ ФУНКЦИЯ */}
           <ShowHistory />
         </div>
         <div className="box child_4">
