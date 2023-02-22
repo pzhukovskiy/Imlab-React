@@ -13,6 +13,9 @@ const defaultState = {
           items: state.items.filter((item) => item.id !== action.payload),
         };
       }
+      case "SHOW_ITEM": {
+        return {...state};
+      }
       default:
         return state;
     }

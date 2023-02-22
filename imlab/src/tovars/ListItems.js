@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addItemAction, deleteItemAction, showItemActionMessage } from "../redux/actions";
 
 function ListItems() {
   const dispatch = useDispatch();
@@ -9,26 +10,41 @@ function ListItems() {
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
 
+
+  const person = {
+    id: new Date(),
+    name,
+    quantity,
+    price
+  }
+
   const addItem = (name, quantity, price) => {
-    const person = {
-      id: new Date(),
-      name,
-      quantity,
-      price
+    if (name.trim && quantity && price) {
+      dispatch(addItemAction(person));
+      setName("");
+      setQuantity("");
+      setPrice("");
     }
-    dispatch({type: "ADD_ITEM", payload: person});
-    setName("");
-    setQuantity("");
-    setPrice("");
+    else {
+      alert("Введите корректные данные");
+    }
   }
 
   const deleteItem = (item) => {
-    dispatch({type: "DELETE_ITEM", payload: item.id})
+    dispatch(deleteItemAction(item.id))
   }
 
+  const handleAddItem = (item) => {
+    dispatch(showItemActionMessage(item.id));
+    alert(`Вы добавили предмет: ${item.name}, \nего количество: ${item.quantity}, \nего цена: ${item.price} $`);
+  }
 
   return (
     <div className="App">
+      <div className="trash">
+        <button><span>Корзина</span></button>
+      </div>
+      <hr/>
       <input 
         placeholder="Введите название"
         value={name}
@@ -56,7 +72,7 @@ function ListItems() {
                 <h1>Название: {person.name}</h1>
                 <p>Количество: {person.quantity}</p>
                 <p>Цена: {person.price}</p>
-                <button>Добавить</button>
+                <button onClick={() => handleAddItem(person)}>Добавить</button>
                 <button onClick={() => deleteItem(person)}>Удалить</button>
               </div>
             ))}
